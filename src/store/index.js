@@ -55,7 +55,7 @@ export default createStore({
         title: 'Конфета арахисовая',
         description: 'Конфета из молочного шоколада, внутри ганаш с арахисовой пастой, обсыпана арахисовой крошкой',
         ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи,арахисовая паста',
-        image: require('@/assets/images/productsImg/Candy5.jpg')
+        image: require('@/assets/images/productsImg/Candy3.jpg')
       },
       {
         id: 7,
