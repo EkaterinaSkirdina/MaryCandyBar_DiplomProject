@@ -1,0 +1,57 @@
+@import 'vars';
+@import 'mixins';
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.1s ease;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+
+.container {
+    padding-left: calc(50% - $widthContent/2);
+    padding-right: calc(50% - $widthContent/2);
+}
+
+.text {
+    font-family: Jost;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $textColor;
+}
+
+.small-text {
+    font-family: DM Serif Display;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 125%;
+    color: $textColor;
+}
+
+.title {
+    font-family: DM Serif Display;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 125%;
+    color: $textColor;
+}
+
+.brand-heading {
+    font-family: DM Serif Display;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 125%;
+    color: $brandColor;
+}

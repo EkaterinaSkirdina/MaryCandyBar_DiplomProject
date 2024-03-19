@@ -1,0 +1,7 @@
+@import 'vars';
+
+@mixin flexAlignment($position) {
+    display: flex;
+    align-items: center;
+    justify-content: $position;
+}
