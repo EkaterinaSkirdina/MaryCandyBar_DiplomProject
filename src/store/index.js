@@ -10,7 +10,8 @@ export default createStore({
         title: 'Шоколад молочный',
         description: 'Молочный шоколад с добавлением сублимированных фруктов и орехов',
         ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, сублимированные ягоды',
-        image: require('@/assets/images/productsImg/Chocolate1.jpg')
+        image: require('@/assets/images/productsImg/Chocolate1.jpg'),
+        price: 350
       },
       {
         id: 2,
@@ -19,7 +20,8 @@ export default createStore({
         title: 'Шоколад белый',
         description: 'Белый шоколад с добавлением сублимированных фруктов и орехов',
         ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, сублимированные ягоды',
-        image: require('@/assets/images/productsImg/Chocolate2.jpg')
+        image: require('@/assets/images/productsImg/Chocolate2.jpg'),
+        price: 350
       },
       {
         id: 3,
@@ -28,7 +30,8 @@ export default createStore({
         title: 'Шоколад горький',
         description: 'Горький шоколад с добавлением сублимированных фруктов и орехов',
         ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, сублимированные ягоды',
-        image: require('@/assets/images/productsImg/Chocolate3.jpg')
+        image: require('@/assets/images/productsImg/Chocolate3.jpg'),
+        price: 350
       },
       {
         id: 4,
@@ -37,7 +40,8 @@ export default createStore({
         title: 'Конфета кокосовая с миндалем',
         description: 'Конфета из белого шоколада с кокосом, внутри цельный миндаль, обсыпана вафельной крошкой',
         ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, кокос, вафельная крошка',
-        image: require('@/assets/images/productsImg/Candy1.jpg')
+        image: require('@/assets/images/productsImg/Candy1.jpg'),
+        price: 75
       },
       {
         id: 5,
@@ -46,7 +50,8 @@ export default createStore({
         title: 'Конфета темный шоколад с фундуком',
         description: 'Конфета из темного шоколада, внутри цельный фундук',
         ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи',
-        image: require('@/assets/images/productsImg/Candy2.jpg')
+        image: require('@/assets/images/productsImg/Candy2.jpg'),
+        price: 75
       },
       {
         id: 6,
@@ -55,7 +60,8 @@ export default createStore({
         title: 'Конфета арахисовая',
         description: 'Конфета из молочного шоколада, внутри ганаш с арахисовой пастой, обсыпана арахисовой крошкой',
         ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи,арахисовая паста',
-        image: require('@/assets/images/productsImg/Candy3.jpg')
+        image: require('@/assets/images/productsImg/Candy3.jpg'),
+        price: 75
       },
       {
         id: 7,
@@ -64,7 +70,8 @@ export default createStore({
         title: 'Набор конфет "8 Mарта"',
         description: 'Набор из натурального шоколада, подарит радость и удовольствие. Красивая упаковка создаст торжественную обстановку. Вас приятно удивит вкус каждой конфеты.',
         ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, кокос, вафельная крошка, арахисовая паста',
-        image: require('@/assets/images/productsImg/Candy1.jpg')
+        image: require('@/assets/images/productsImg/Candy1.jpg'),
+        price: 1250
       },
       {
         id: 7,
@@ -73,7 +80,8 @@ export default createStore({
         title: 'Набор конфет "8 Mарта"',
         description: 'Набор из натурального шоколада, подарит радость и удовольствие. Красивая упаковка создаст торжественную обстановку. Вас приятно удивит вкус каждой конфеты.',
         ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, кокос, вафельная крошка, арахисовая паста',
-        image: require('@/assets/images/productsImg/CandySet8M.jpg')
+        image: require('@/assets/images/productsImg/CandySet8M.jpg'),
+        price: 1099
       },
       {
         id: 8,
@@ -82,7 +90,8 @@ export default createStore({
         title: 'Набор конфет "День учителя"',
         description: 'Набор из натурального шоколада, подарит радость и удовольствие. Красивая упаковка создаст торжественную обстановку. Вас приятно удивит вкус каждой конфеты.',
         ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, кокос, вафельная крошка, арахисовая паста',
-        image: require('@/assets/images/productsImg/CandySetTeachDay.jpg')
+        image: require('@/assets/images/productsImg/CandySetTeachDay.jpg'),
+        price: 950
       },
       {
         id: 9,
@@ -91,7 +100,8 @@ export default createStore({
         title: 'Набор конфет "Новый год"',
         description: 'Набор из натурального шоколада, подарит радость и удовольствие. Красивая упаковка создаст торжественную обстановку. Вас приятно удивит вкус каждой конфеты.',
         ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, кокос, вафельная крошка, арахисовая паста',
-        image: require('@/assets/images/productsImg/CandySetNY.jpg')
+        image: require('@/assets/images/productsImg/CandySetNY.jpg'),
+        price: 1350
       },
       {
         id: 10,
@@ -100,7 +110,8 @@ export default createStore({
         title: 'Набор конфет "Ассорти"',
         description: 'Набор из натурального шоколада, подарит радость и удовольствие. Красивая упаковка создаст торжественную обстановку. Вас приятно удивит вкус каждой конфеты.',
         ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, кокос, вафельная крошка, арахисовая паста',
-        image: require('@/assets/images/productsImg/CandySetSimple.jpg')
+        image: require('@/assets/images/productsImg/CandySetSimple.jpg'),
+        price: 850
       }      
     ],
     cart: {
