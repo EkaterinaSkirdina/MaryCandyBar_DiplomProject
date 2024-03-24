@@ -35,6 +35,9 @@
 .card {
     width: 370px;
     background-color: #fff;
+    border: 2px solid $bgColor;
+    border-radius: 30px;
+    padding: 15px;
     &-content {
         padding: 10px 15px;
     }
@@ -43,13 +46,14 @@
     width: 100%;
     height: 300px;
     object-fit: cover;
+    border-radius: 20px;
 }
 .text {
     font-size: 18px;
 }
 .bottom-content {
     @include flexAlignment(space-between);
-    padding: 0 15px 15px;
+    padding: 0 15px;
 }
 .price {
     color: #eb8494;
@@ -58,8 +62,9 @@
     display: flex;
     gap: 12px;
     cursor: pointer;
-    border: 1px solid $bgColor;
+    border: 2px solid $bgColor;
     padding: 15px;
+    border-radius: 10px;
     &:hover {
         background-color: $bgColor;
     }
