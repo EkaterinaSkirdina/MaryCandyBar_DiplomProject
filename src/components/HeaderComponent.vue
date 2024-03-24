@@ -15,7 +15,7 @@
                 </summary>
                 <div class="catalog-menu__box">
                     <router-link @click="removeAtrOpen()"
-                        to="/chokolate" 
+                        to="/chocolate" 
                         class="catalog-menu__item text">                        
                         <img class="icon" src="@/assets/images/componentsImg/chocolate_icon.svg">
                         Шоколад</router-link>
