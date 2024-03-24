@@ -14,14 +14,16 @@
                 </svg>
                 </summary>
                 <div class="catalog-menu__box">
-                    <router-link to="/chokolate" class="catalog-menu__item text">
-                        <img class="icon" src="@/assets/images/componentsImg/chocolate_icon.svg" alt="">
+                    <router-link @click="removeAtrOpen()"
+                        to="/chokolate" 
+                        class="catalog-menu__item text">                        
+                        <img class="icon" src="@/assets/images/componentsImg/chocolate_icon.svg">
                         Шоколад</router-link>
-                    <router-link to="/sweets" class="catalog-menu__item text">
-                        <img class="icon" src="@/assets/images/componentsImg/candy_icon.png" alt="">
+                    <router-link @click="removeAtrOpen()" to="/sweets" class="catalog-menu__item text">
+                        <img class="icon" src="@/assets/images/componentsImg/candy_icon.png">
                         Конфеты</router-link>
-                    <router-link to="/sweets-set" class="catalog-menu__item text">
-                        <img class="icon" src="@/assets/images/componentsImg/sweet-set_icon.svg" alt="">
+                    <router-link @click="removeAtrOpen()" to="/sweets-set" class="catalog-menu__item text">
+                        <img class="icon" src="@/assets/images/componentsImg/sweet-set_icon.svg">
                         Наборы</router-link>
                 </div>
             </details>
@@ -40,6 +42,17 @@
 <script>
 export default {
     name: 'Header',
+    data() {
+        return {
+            
+        }
+    },
+    methods: {
+        removeAtrOpen() {
+            document.querySelector('details').removeAttribute('open');
+        }
+    }
+
 }
 </script>
 
