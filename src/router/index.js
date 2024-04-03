@@ -18,9 +18,19 @@ const routes = [
     component: () => import('../views/DeliveryView.vue')
   },
   {
-    path: '/:catalog',
-    name: 'catalog',    
-    component: () => import('../views/CatalogView.vue')
+    path: '/chocolate',
+    name: 'chocolate',    
+    component: () => import('../views/ChocolateView.vue')
+  },
+  {
+    path: '/sweets-set',
+    name: 'sweets-set',    
+    component: () => import('../views/SweetsSetView.vue')
+  },
+  {
+    path: '/sweets',
+    name: 'sweets',    
+    component: () => import('../views/SweetsView.vue')
   },
   {
     path: '/cart',
@@ -30,6 +40,10 @@ const routes = [
   {
     path: "/:catchAll(.*)",
     component: () => import('../views/NotFoundView.vue'),
+  },
+  {
+    path: "/order-ok",
+    component: () => import('../views/OrderOkView.vue'),
   },
   
 ]
