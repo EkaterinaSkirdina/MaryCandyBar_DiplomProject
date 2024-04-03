@@ -5,7 +5,7 @@
           <h2 class="breadcrumb__name brand-heading">{{ heading }}</h2>
           <p class="breadcrumb__way">
             <router-link to="/" class="text">Главная</router-link>
-            <span class="current-way">{{ heading }}</span>
+            <span class="current-way text">{{ heading }}</span>
           </p>
         </div>
       </div>
@@ -33,7 +33,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-bottom: 200px;
     
 }
 
@@ -58,11 +57,6 @@
     }
 }
 .current-way {
-  font-family: Jost;
-  font-size: 22px;
-  line-height: 150%;
-  color: $lightTextColor;
-  white-space: pre-line;
   font-weight: 500;
 }
 </style>

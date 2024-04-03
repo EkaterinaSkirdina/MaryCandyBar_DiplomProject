@@ -11,7 +11,7 @@
             <router-link to="/delivery" class="text" >Доставка и оплата</router-link>
         </div>
         <div>
-            <h3 class="title">Контакты</h3>
+            <h3 class="text">Контакты</h3>
             <p class="small-text">Адрес: Москва, Цветной бульвар</p>
             <p class="small-text">e-mail: MaryCB@mail.ru</p>
             <p class="small-text">+7 (495) 000-00-00</p>
@@ -31,6 +31,11 @@
 @import '@/assets/style.scss';
 
     .footer {
+        position: absolute;
+        left: 0;
+        height: 200px;
+        width: 100%;
+        bottom: 0;
         padding: 30px 0;
         display: flex;
         align-items: flex-start;

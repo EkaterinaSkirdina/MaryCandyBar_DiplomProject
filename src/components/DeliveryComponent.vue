@@ -35,6 +35,7 @@
 <style scoped lang="scss">
 @import '@/assets/style.scss';
 .delivery {
+    
     @include flexAlignment(normal);
     &-left {
         width: 40%;
@@ -44,11 +45,12 @@
     }
     &-right {
         width: 60%;
-        padding: 65px 95px;
+        padding: 45px 95px;
     }
 }
 
 .payment {
+    padding-bottom: 200px;
     @include flexAlignment(normal);
     margin-bottom: 25px;
     &-left {
@@ -66,6 +68,7 @@
 
 .title {
     margin-top: 15px;
+    font-size: 30px;
 }
 
 </style>

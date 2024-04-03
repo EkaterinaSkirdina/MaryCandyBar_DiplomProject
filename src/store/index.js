@@ -1,142 +1,121 @@
 import { createStore } from 'vuex'
+import axios from 'axios';
 
 export default createStore({
+
   state: {
-    productsList: [
-      {
-        id: 1,
-        category: 'Шоколад',
-        tag: 'просто так',
-        title: 'Шоколад молочный',
-        description: 'Молочный шоколад с добавлением сублимированных фруктов и орехов',
-        ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, сублимированные ягоды',
-        image: require('@/assets/images/productsImg/Chocolate1.jpg'),
-        price: 350
-      },
-      {
-        id: 2,
-        category: 'Шоколад',
-        tag: 'просто так',
-        title: 'Шоколад белый',
-        description: 'Белый шоколад с добавлением сублимированных фруктов и орехов',
-        ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, сублимированные ягоды',
-        image: require('@/assets/images/productsImg/Chocolate2.jpg'),
-        price: 350
-      },
-      {
-        id: 3,
-        category: 'Шоколад',
-        tag: 'просто так',
-        title: 'Шоколад горький',
-        description: 'Горький шоколад с добавлением сублимированных фруктов и орехов',
-        ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, сублимированные ягоды',
-        image: require('@/assets/images/productsImg/Chocolate3.jpg'),
-        price: 350
-      },
-      {
-        id: 4,
-        category: 'Конфеты',
-        tag: 'просто так',
-        title: 'Конфета кокосовая с миндалем',
-        description: 'Конфета из белого шоколада с кокосом, внутри цельный миндаль, обсыпана вафельной крошкой',
-        ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, кокос, вафельная крошка',
-        image: require('@/assets/images/productsImg/Candy1.jpg'),
-        price: 75
-      },
-      {
-        id: 5,
-        category: 'Конфеты',
-        tag: 'просто так',
-        title: 'Конфета темный шоколад с фундуком',
-        description: 'Конфета из темного шоколада, внутри цельный фундук',
-        ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи',
-        image: require('@/assets/images/productsImg/Candy2.jpg'),
-        price: 75
-      },
-      {
-        id: 6,
-        category: 'Конфеты',
-        tag: 'просто так',
-        title: 'Конфета арахисовая',
-        description: 'Конфета из молочного шоколада, внутри ганаш с арахисовой пастой, обсыпана арахисовой крошкой',
-        ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи,арахисовая паста',
-        image: require('@/assets/images/productsImg/Candy3.jpg'),
-        price: 75
-      },
-      {
-        id: 7,
-        category: 'Наборы',
-        tag: '8 марта',
-        title: 'Набор конфет "8 Mарта"',
-        description: 'Набор из натурального шоколада, подарит радость и удовольствие. Красивая упаковка создаст торжественную обстановку. Вас приятно удивит вкус каждой конфеты.',
-        ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, кокос, вафельная крошка, арахисовая паста',
-        image: require('@/assets/images/productsImg/Candy1.jpg'),
-        price: 1250
-      },
-      {
-        id: 7,
-        category: 'Наборы',
-        tag: '8 марта',
-        title: 'Набор конфет "8 Mарта"',
-        description: 'Набор из натурального шоколада, подарит радость и удовольствие. Красивая упаковка создаст торжественную обстановку. Вас приятно удивит вкус каждой конфеты.',
-        ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, кокос, вафельная крошка, арахисовая паста',
-        image: require('@/assets/images/productsImg/CandySet8M.jpg'),
-        price: 1099
-      },
-      {
-        id: 8,
-        category: 'Наборы',
-        tag: 'День учителя',
-        title: 'Набор конфет "День учителя"',
-        description: 'Набор из натурального шоколада, подарит радость и удовольствие. Красивая упаковка создаст торжественную обстановку. Вас приятно удивит вкус каждой конфеты.',
-        ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, кокос, вафельная крошка, арахисовая паста',
-        image: require('@/assets/images/productsImg/CandySetTeachDay.jpg'),
-        price: 950
-      },
-      {
-        id: 9,
-        category: 'Наборы',
-        tag: 'Новый год',
-        title: 'Набор конфет "Новый год"',
-        description: 'Набор из натурального шоколада, подарит радость и удовольствие. Красивая упаковка создаст торжественную обстановку. Вас приятно удивит вкус каждой конфеты.',
-        ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, кокос, вафельная крошка, арахисовая паста',
-        image: require('@/assets/images/productsImg/CandySetNY.jpg'),
-        price: 1350
-      },
-      {
-        id: 10,
-        category: 'Наборы',
-        tag: 'Просто так',
-        title: 'Набор конфет "Ассорти"',
-        description: 'Набор из натурального шоколада, подарит радость и удовольствие. Красивая упаковка создаст торжественную обстановку. Вас приятно удивит вкус каждой конфеты.',
-        ingredients: 'сахар, масла какао, сухое молоко, тертое какао, лецитин, ванилин, орехи, кокос, вафельная крошка, арахисовая паста',
-        image: require('@/assets/images/productsImg/CandySetSimple.jpg'),
-        price: 850
-      }      
-    ],
-    cart: {
-      cartProducts: [],
-      totalCount: 0,
-      totalPrice: 0
-    },
-    tagsList: [],
+    products: [],
+    cart: [],
+    orders: [],
+    slideItems: [
+      require("@/assets/images/productsImg/Candyes.jpg"),
+      require("@/assets/images/productsImg/CandySet8M.jpg"),
+      require("@/assets/images/productsImg/CandySetNY.jpg"),
+      require("@/assets/images/productsImg/CandySetSimple.jpg"),
+      require("@/assets/images/productsImg/CandySetTeachDay.jpg"),
+    ]
   },
+
   getters: {
-    GET_PRODUCTS_LIST(state) {
-      return state.productsList;
+    PRODUCTS(state) {
+      return state.products;
     },
-    GET_TAGS_LIST(state) {
-      return state.tagsList;
+    ORDERS(state) {
+      return state.orders;
+    },
+    CART(state) {
+      return state.cart;
+    },
+    TOTAL_IN_CART(state) {        
+     return state.cart.reduce((sum, item) => sum + item.quantity, 0);
+    },
+    TOTAL_PRICE(state) {
+        return state.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+    },
+    SLIDE_ITEMS(state) {
+      return state.slideItems;
     }
   },
   mutations: {
-    SET_TAGS_LIST(state) {
-      state.tagsList = Set(state.productsList.forEach(el => el.tag));
+
+    SET_PRODUCTS_TO_STATE: (state, products) => {
+      state.products = products;
+    },
+
+    SET_ORDERS: (state, order) => {
+      state.orders.push(order);
+    },
+
+    SET_CART: (state, product) => {
+      state.cart.push(product);
+      product.quantity = 1;
+    },
+
+    EMPTY_CART: (state) => {
+      state.cart = [];
+    },
+
+    SET_DECREASE_QUANTITY(state, id) {
+      state.cart.map(function(item) {
+        if (item.id === id) {
+          if(item.quantity > 1)
+          item.quantity--;
+        }
+      })
+    },
+
+    SET_INCREASE_QUANTITY(state, id) {
+      state.cart.map(function(item) {
+        if (item.id === id) {
+          item.quantity++;
+        }
+      })
+    },
+
+    REMOVE_FROM_CART: (state, index) => {
+      state.cart.splice(index, 1);
     },
 
   },
   actions: {
-  },
-  modules: {
+    async GET_PRODUCTS_FROM_API({commit}) {
+      try {
+        const products = await axios.get('http://localhost:3000/products');
+        commit('SET_PRODUCTS_TO_STATE', products.data);
+      } catch (error) {
+        console.log(error);
+      }
+      },
+
+      async POST_ORDERS_API({commit}, order) {
+        try {
+          await axios.post('http://localhost:3000/orders', order)
+            .then(commit('SET_ORDERS', order));
+        } catch (error) {
+          console.log(error);
+        }
+      },
+
+      ADD_TO_CART({commit}, product) {
+        commit('SET_CART', product);
+      },
+
+      DELETE_FROM_CART({commit}, index) {
+        commit('REMOVE_FROM_CART', index);
+      },
+
+      CLEAR_CART({commit}) {
+        commit('EMPTY_CART');
+      },
+
+      DECREASE_QUANTITY({commit}, index) {
+        commit('SET_DECREASE_QUANTITY', index);
+      },
+
+      INCREASE_QUANTITY({commit}, index) {
+        commit('SET_INCREASE_QUANTITY', index);
+      }
+  },  
+  module: {
   }
 })

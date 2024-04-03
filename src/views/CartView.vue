@@ -166,7 +166,7 @@ import { mapGetters, mapActions } from 'vuex';
                     this.onReset();
                     this.closeModal();
                     this.clearCart();
-                    // this.$router.push('/order-ok');
+                    this.$router.push('/order-ok');
                 } catch (error) {
                     console.log(error);
                     this.$router.push('/order-error');

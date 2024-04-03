@@ -3,8 +3,6 @@
 
   <CardProductListComponent />
 
-  <SaleComponent />
-
   <FooterComponent />
 
 </template>
@@ -12,7 +10,6 @@
 <script>
 import BannerComponent from '@/components/BannerComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
-import SaleComponent from '@/components/SaleComponent.vue';
 import CardProductListComponent from '@/components/CardProductListComponent.vue';
 
 import { mapState, mapMutations, mapGetters, mapActions} from 'vuex';
@@ -30,7 +27,6 @@ import { mapState, mapMutations, mapGetters, mapActions} from 'vuex';
           FooterComponent,
           BannerComponent,
           CardProductListComponent,
-          SaleComponent
       },
 
       computed: {
