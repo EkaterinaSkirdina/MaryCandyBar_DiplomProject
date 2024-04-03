@@ -1,6 +1,6 @@
 <template>
     <section class="product-list container">
-        <CardProductComponent v-for="product in filteredList()" :key="product.id" :product = "product" />
+        <CardProductComponent v-for="product in filteredList()" :key="product.id" :product = "product"/>
     </section>
 </template>
 
@@ -15,21 +15,27 @@ import { mapState, mapMutations, mapGetters, mapActions} from 'vuex';
       },
 
       computed: {
-        ...mapGetters(['GET_PRODUCTS_LIST']),
+        ...mapGetters(['PRODUCTS']),
       },
       methods: {
+        ...mapActions(['GET_PRODUCTS_FROM_API', 'ADD_TO_CART']),
+
         filteredList() {
             const currentPage = String(this.$route.name);
-            console.log(currentPage);
-            return this.GET_PRODUCTS_LIST.filter(el => el.category === currentPage);
-             
-        }
+            const currentList = this.PRODUCTS.filter(el => el.category === currentPage);
+            return currentList;           
+        },
+
+      },
+      mounted() {
+        this.GET_PRODUCTS_FROM_API();
       }
     }
 </script>
 
 <style scoped lang="scss">
 .product-list {
+    padding-bottom: 250px;
     display: flex;
     margin: 75px 0;
     flex-wrap: wrap;
