@@ -4,6 +4,8 @@
 
  <HomeCatalogComponent />
 
+ <HomeAdvantagesComponent />
+
  <SwiperAutoComponent />
 
  <FooterComponent />
@@ -15,6 +17,7 @@ import HomeBannerComponent from '@/components/HomeBannerComponent.vue';
 import HomeCatalogComponent from '@/components/HomeCatalogComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
 import SwiperAutoComponent from '@/components/SwiperAutoComponent.vue';
+import HomeAdvantagesComponent from '@/components/HomeAdvantagesComponent.vue';
 
 export default {
   name: 'HomeView',
@@ -22,7 +25,8 @@ export default {
     HomeBannerComponent,
     HomeCatalogComponent,
     FooterComponent,
-    SwiperAutoComponent
+    SwiperAutoComponent,
+    HomeAdvantagesComponent
   }
 }
 </script>
