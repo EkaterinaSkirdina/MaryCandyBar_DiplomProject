@@ -32,7 +32,7 @@
                 <img src="@/assets/images/componentsImg/Logo.png" alt="logotype image"/>
             </router-link>
             <router-link to="/delivery" class="text">Доставка и оплата</router-link>
-            <router-link to="/cart" class="text">Корзина</router-link>
+            <router-link to="/cart" class="text">Корзина({{ TOTAL_IN_CART }})</router-link>
 
         </div>
     </header>
@@ -40,12 +40,17 @@
 
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
     name: 'Header',
     data() {
         return {
             
         }
+    },
+    computed: {
+        ...mapGetters(['TOTAL_IN_CART'])
     },
     methods: {
         removeAtrOpen() {
@@ -74,20 +79,19 @@ export default {
         &__box {
             background: #FFF;
             box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-            padding: 9px;
+            padding: 20px;
+            border-radius: 15px;
             position: absolute;
-            left: -8px;
-            top: 35px;
-            gap: 6px;
+            left: -30px;
+            top: 48px;
             display: flex;
             flex-direction: column;
             z-index: 999;
-            & a {
-                font-size: 18px;
-                &:hover {
+            gap: 20px;
+            & a:hover {
                     transform: scale(1.1);
                     background: $brandColor;
-                }
+                    border-radius: 5px;
             }                        
         }
         &__item {
