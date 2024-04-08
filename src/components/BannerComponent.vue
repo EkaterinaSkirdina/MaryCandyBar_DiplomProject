@@ -28,7 +28,7 @@
 
 
 .blog__banner {
-    height: 356px;
+    height: 250px;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -58,5 +58,14 @@
 }
 .current-way {
   font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  .breadcrumb {
+    padding: 20px 30px;
+  }
+  .blog__banner {
+    height: 175px;
+  }
 }
 </style>

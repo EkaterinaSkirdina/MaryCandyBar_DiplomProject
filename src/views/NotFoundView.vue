@@ -16,7 +16,10 @@
 .not-found {
     text-align: center;
     & img {
-        border-radius: 0 180px;
+        border-radius: 0 90px;
+        width: 90%;
+        min-height: 350px;
+        object-fit: cover;
     }
 }
 </style>

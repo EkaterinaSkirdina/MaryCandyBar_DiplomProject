@@ -58,12 +58,12 @@
     bottom: 0;
 }
 .v-modal {
-    padding: 16px;
+    padding: 15px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     background-color: #fff;
     box-shadow: 2px 2px 10px 3px #f5d3d8;
@@ -72,7 +72,6 @@
 
     &__header {
         @include flexAlignment(space-between);
-        margin-bottom: 25px;
         & svg {
             width: 35px;
             height: 35px;
@@ -92,13 +91,31 @@
         gap: 12px;
         cursor: pointer;
         border: 4px solid $bgColor;
-        padding: 15px;
+        padding: 5px 15px;
         border-radius: 10px;
         background-color: #fff;
         &:hover {
             background-color: $bgColor;
         }
     }
+}
+
+@media (max-width: 767px) {
+    .v-modal {
+        padding: 10px;
+        &__header {
+            margin-bottom: 5px;
+        }
+        &__content {
+            gap: 10px;
+            flex-direction: column;
+        }
+        .submit_btn {
+        padding: 5px 15px;
+        margin-top: 5px;
+    }
+    }
+    
 }
 
 </style>

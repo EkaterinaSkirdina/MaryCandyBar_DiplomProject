@@ -1,9 +1,9 @@
 <template>
     <section class="delivery container">
-        <div class="delivery-left">
+        <div class="delivery__left">
             <img src="@/assets/images/componentsImg/DeliveryIcon.jpg" alt="delivery picture">
         </div>
-        <div class="delivery-right">
+        <div class="delivery__right">
                 <p class="text">Для наших покупателей доступны 2 способа доставки: курьерская доставка по Москве в пределах МКАД и самовывоз.</p>       
             
                 <h3 class="title">Доставка</h3>
@@ -16,11 +16,11 @@
         </div>
     </section>
     <section class="payment container">
-        <div class="payment-left">
+        <div class="payment__left">
             <h3 class="title">Оплата</h3>
             <p class="small-text">Вы можете оплатить заказ при получении наличными или банковской картой. Для этого укажите выбранный способ при оформлении заказа.</p>
         </div>
-        <div class="payment-right">
+        <div class="payment__right">
             <img src="@/assets/images/componentsImg/payment.png" alt="payment picture">
         </div>
     </section>
@@ -37,13 +37,13 @@
 .delivery {
     
     @include flexAlignment(normal);
-    &-left {
+    &__left {
         width: 40%;
         & img {
             width: 100%;
         }
     }
-    &-right {
+    &__right {
         width: 60%;
         padding: 45px 95px;
     }
@@ -53,22 +53,38 @@
     padding-bottom: 200px;
     @include flexAlignment(normal);
     margin-bottom: 25px;
-    &-left {
+    &__left {
         width: 60%;
         padding: 100px 130px;        
     }
-    &-right {
+    &__right {
         width: 40%;
         & img {
             width: 75%;
         }
     }
 }
-
-
 .title {
     margin-top: 15px;
-    font-size: 30px;
+}
+
+@media (max-width: 767px) {
+    .delivery {
+        flex-direction: column;
+        &__right {
+            padding: 0;
+        }
+    }
+    .payment {
+        flex-direction: column;
+        &__right {
+            order: -1;
+            margin-top: 15px;
+        }
+        &__left {
+            padding: 0;
+        }
+    }
 }
 
 </style>

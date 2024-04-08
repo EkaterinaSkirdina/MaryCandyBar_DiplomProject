@@ -10,7 +10,7 @@
         <div class="advantages-block__item">
             <img src="@/assets/images/componentsImg/homeAdvPhoto.png" alt="photo icon">
             <p class="small-text"><b>Фото-отчет</b></p>
-            <p class="small-text">Перед доставкой мы пришлем фото готовых шоколадных изделий, чтобы Вы убедились в его качестве. После утверждения вами заказа, курьер поедет по адресу</p>
+            <p class="small-text">Перед доставкой мы пришлем фото готовых шоколадных изделий, чтобы Вы убедились в его качестве.</p>
         </div>
         <div class="advantages-block__item">
             <img src="@/assets/images/componentsImg/homeAdvPay.png" alt="payment icon">
@@ -36,7 +36,7 @@
 @import '@/assets/style.scss';
 
 .advantages {
-    margin-bottom: 75px;
+    margin-bottom: 50px;
     .title {
         margin-bottom: 25px;
         text-align: center;
@@ -50,6 +50,12 @@
         }
     }
     
+}
+
+@media (max-width: 767px) {
+    .advantages-block {
+    grid-template-columns: 1fr 1fr;
+    }
 }
 
 

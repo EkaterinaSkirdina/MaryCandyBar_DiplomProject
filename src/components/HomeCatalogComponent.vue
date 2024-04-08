@@ -4,7 +4,7 @@
 
             <router-link to="/chocolate" class="catalog__link choco text">Шоколад</router-link>
             <router-link to="/sweets" class="catalog__link sweets text">Конфеты</router-link>
-            <router-link to="/sweets-set" class="catalog__link sweets-set text">Наборы конфет</router-link>
+            <router-link to="/sweets-set" class="catalog__link sweets-set text">Наборы</router-link>
 
         </nav>
     </section>

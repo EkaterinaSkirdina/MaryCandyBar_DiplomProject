@@ -39,7 +39,14 @@
         object-fit: cover;
         width: 100%;
         margin-top: -220px;
-        margin-bottom: -6px;
+        margin-bottom: -35px;
     }
+}
+
+@media (max-width: 767px) {
+    .about {
+    padding-bottom: 170px;
+    }
+
 }
 </style>

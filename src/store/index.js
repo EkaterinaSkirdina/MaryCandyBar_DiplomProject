@@ -115,7 +115,5 @@ export default createStore({
       INCREASE_QUANTITY({commit}, index) {
         commit('SET_INCREASE_QUANTITY', index);
       }
-  },  
-  module: {
   }
 })

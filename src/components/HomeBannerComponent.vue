@@ -2,7 +2,8 @@
     <section class="home-banner container">
         <div class="home-banner__content">
             <p class="brand-heading">Mary Candy Bar</p>
-            <p class="text">С любовью готовим для вас</p>                       
+            <p class="text">С любовью готовим для вас</p>
+            <p class="title">Ручная работа</p>                       
         </div>
         
     </section>
@@ -39,8 +40,17 @@ import SwiperAutoComponent from './SwiperAutoComponent.vue';
 .brand-heading {
     text-shadow: 12px 10px 10px #fff;
 }
-.text {
+.text, .title {
     color: #eb8494;
+}
+
+@media (max-width: 767px) {
+    .home-banner {
+        &__content {
+            height: 250px;
+            padding: 70px;
+        }
+    }
 }
 
 </style>

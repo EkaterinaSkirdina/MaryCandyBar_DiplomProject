@@ -3,9 +3,7 @@
         <img class="img" :src= " require('@/assets/images/productsImg/' + cart_item.image) " alt="product photo">
         <div class="cart-item-content">
             <h3 class="title">{{ cart_item.title }}</h3>
-            <p class="text">{{ cart_item.description }}</p>
-            <p class="text subtitle">Состав:</p>
-            <p class="text">{{ cart_item.ingredients }}</p>
+            <p class="small-text">{{ cart_item.description }}</p>
             <p class="price title">{{ cart_item.price * cart_item.quantity }} руб</p>            
         </div>
         <button @click="deleteFromCart(product)" class="delete-btn">
@@ -70,11 +68,10 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
     }
 }
 .img {
-    width: 30%;
-    height: 250px;
+    width: 125px;
+    height: 125px;
     object-fit: cover;
     border-radius: 20px;
-    margin-right: 40px;
 }
 .bottom-content {
     @include flexAlignment(space-between);
@@ -84,16 +81,18 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
     color: #eb8494;
 }
 .delete-btn {
-    width: 35px;
-    height: 35px;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    width: 5%;
     border: none;
     cursor: pointer;
     background-color: #fff;
 }
 .quantity {
     position: absolute;
-    right: 75px;
-    bottom: 30px;
+    right: 15px;
+    bottom: 15px;
     padding: 5px 15px;
     border: 2px solid rgb(238, 165, 165);
     display: flex;
@@ -107,6 +106,17 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
     background-color: #fff;
     & svg {
         width: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .quantity {
+        gap: 5px;
+        width: 60px;
+        padding: 0;
+    }
+    .counter svg {
+        width: 10px;
     }
 }
 </style>

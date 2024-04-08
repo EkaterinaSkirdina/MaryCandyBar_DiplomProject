@@ -7,20 +7,21 @@
         </div>
 
         <div v-else>
+            <h1 class="brand-heading">Ваша корзина</h1>
             <div class="cart__block">
-            <div class="cart__list">
-                <p class="brand-heading">Ваша корзина</p>
-                <CartItemComponent v-for="(item, index) in CART" 
-                    :key="item.id" 
-                    :cart_item="item"
-                    @deleteFromCart="deleteFromCart(index)" />
-        </div>
-        <div class="cart__total">
-            <p class="title">Итого:</p>  
-            <span class="text">{{ TOTAL_IN_CART }} шт</span>
-            <span class="brand-heading">{{ TOTAL_PRICE }} руб</span>
-            <button @click="showModal" class="btn small-text">Оформить заказ</button>  
-        </div>
+            
+                <div class="cart__list">                
+                    <CartItemComponent v-for="(item, index) in CART" 
+                        :key="item.id" 
+                        :cart_item="item"
+                        @deleteFromCart="deleteFromCart(index)" />
+                </div>
+                <div class="cart__total">
+                    <p class="title">Итого:</p>  
+                    <span class="text">{{ TOTAL_IN_CART }} шт</span>
+                    <span class="brand-heading">{{ TOTAL_PRICE }} руб</span>
+                    <button @click="showModal" class="btn small-text">Оформить заказ</button>  
+                </div>
 
         <ModalWindowComponent 
             v-if="isModalVisible"
@@ -37,7 +38,7 @@
                         </span>
                     </div>
                     <div>
-                        <span class="text">Итого к оплате: 
+                        <span class="total-price text">Итого к оплате: 
                         <span class="brand-heading">{{ TOTAL_PRICE }} руб</span>
                         <span class="small-text">*Без учета стоимости доставки</span>
                     </span>
@@ -83,8 +84,8 @@
                         </textarea>
                     </div>
 
-                    <button class="form__btn text" type="reset">Очистить форму</button>
-                    <button class="form__btn text" type="submit">Заказать</button>
+                    <button class="form__btn small-text" type="reset">Очистить форму</button>
+                    <button class="form__btn small-text" type="submit">Заказать</button>
                 </form>
 
             </div>
@@ -121,11 +122,7 @@ import { mapGetters, mapActions } from 'vuex';
         },
 
         computed: {
-            ...mapGetters (['CART', 'TOTAL_IN_CART', 'TOTAL_PRICE']),
-
-            computed: {
-                
-            },
+            ...mapGetters (['CART', 'TOTAL_IN_CART', 'TOTAL_PRICE']), 
         },
 
         methods: {
@@ -184,18 +181,18 @@ import { mapGetters, mapActions } from 'vuex';
 @import '@/assets/style.scss';
 
 .cart {
-    padding-bottom: 215px;
+    padding-bottom: 200px;
     &__block {
         display: flex;
         justify-content: space-around;
+        margin-top: 25px;
     }
     &__empty {
-        margin-top: 125px;
+        margin-top: 100px;
         display: flex;
         gap: 45px;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 100px;
     }
     &__list {
         gap: 20px;
@@ -211,7 +208,6 @@ import { mapGetters, mapActions } from 'vuex';
         height: 250px;
         border: 2px solid #f5d3d8;
         border-radius: 30px;
-        margin-top: 85px;
         padding: 15px;
     }
     .btn {
@@ -227,6 +223,8 @@ import { mapGetters, mapActions } from 'vuex';
     }
 }
 
+
+    // Модальное окно
 .modal-content {
     padding: 0 15px;
     width: 100%;
@@ -245,13 +243,61 @@ import { mapGetters, mapActions } from 'vuex';
         &__btn {
             margin-top: 15px;
             margin-right: 20px;
-            padding: 7px;
+            padding: 3px;
             cursor: pointer;
-            width: 165px;
+            width: 125px;
         }        
         & input, textarea {            
-            padding: 8px;
+            padding: 3px;
         }
     }
+}
+
+
+@media (max-width: 767px) {
+    .cart {
+        &__block {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__total {
+            order: -1;
+            width: 90%;
+            height: 115px;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+        &__list {
+            width: 90%;
+        }
+        .btn {
+            width: 130px;
+        }
+    }
+    .brand-heading {
+        text-align: center;
+    }
+
+    // Модальное окно
+    .modal-content {
+        padding: 0;
+        & .form__btn {
+        margin-top: 5px;
+        margin-right: 5px;
+        padding: 0px;
+        width: 140px;
+        }
+    }
+    .total-price {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    
 }
 </style>

@@ -42,4 +42,12 @@ import { mapState, mapMutations, mapGetters, mapActions} from 'vuex';
     justify-content: space-evenly;
     gap: 15px;
 }
+
+@media (max-width: 767px) {
+  .product-list {
+  padding-bottom: 200px;
+  margin-top: 50px;
+  }
+}
+
 </style>

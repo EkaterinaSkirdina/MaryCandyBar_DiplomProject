@@ -1,5 +1,5 @@
 <template>
-    <section class="container">
+    <section class="galery container">
         <h1 class="brand-heading">Галерея</h1>
         <swiper
         :spaceBetween="30"
@@ -51,6 +51,10 @@
   
   <style lang="scss" scoped>
 
+  .galery {
+    padding-bottom: 200px;
+  }
+
   .brand-heading {
     text-align: center;
     text-shadow: 1px 1px 1px rgb(119, 101, 101);
@@ -83,4 +87,12 @@
     object-fit: cover;
   }
   
+
+  @media (max-width: 767px) {
+    .swiper {
+      width: 85%;
+      height: 350px;
+      margin-bottom: 35px;
+    }
+  }
   </style>

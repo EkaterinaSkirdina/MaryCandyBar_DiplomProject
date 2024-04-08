@@ -3,18 +3,18 @@
 
         <ModalWindowComponent 
             v-if="isModalVisible"
-            modalBtn="В корзину"
+            modalBtn="Назад"
             :modalHeading="product.title"
             @closeModal="closeModal"
-            @modalBtnAction="addToCart"
+            @modalBtnAction="closeModal"
 
         >
-            <img class="img" :src= " require('@/assets/images/productsImg/' + product.image) " alt="product photo">
+            <img class="modal-img" :src= " require('@/assets/images/productsImg/' + product.image) " alt="product photo">
             <div class="modal-content">                
-                <p class="title">{{ product.description }}</p>
-                <p class="text">{{ product.info }}</p>
-                <p class="text">Состав: {{ product.ingredients }}</p>
-                <p class="brand-heading">{{ product.price }} руб</p>
+                <p class="text">{{ product.description }}</p>
+                <p class="small-text">{{ product.info }}</p>
+                <p class="small-text">Состав: {{ product.ingredients }}</p>
+                <p class="price title">{{ product.price }} руб</p>
 
             </div>
         </ModalWindowComponent>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="bottom-content">
-            <p class="price brand-heading">{{ product.price }} руб</p>
+            <p class="price title">{{ product.price }} руб</p>
             <div v-if="!isInCart()" @click="addToCart" class="cart-btn text">
                 <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14.2911 5.37109H1V20.0002H14.2911V5.37109Z" stroke="black" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -143,5 +143,11 @@ import ModalWindowComponent from '@/components/ModalWindowComponent.vue';
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 5px;
+}
+.modal-img {
+    object-fit: cover;
+    border-radius: 20px;
+    height: 200px;
 }
 </style>
