@@ -27,8 +27,7 @@
   // Import Swiper styles
   import "swiper/css";
   import "swiper/css/pagination";
-  import "swiper/css/navigation";
-  
+  import "swiper/css/navigation";  
   // import required modules
   import { Autoplay, Pagination, Navigation } from "swiper/modules";
   import { mapGetters } from "vuex";
@@ -50,25 +49,21 @@
   </script>
   
   <style lang="scss" scoped>
-
   .galery {
     padding-bottom: 200px;
   }
-
   .brand-heading {
     text-align: center;
     text-shadow: 1px 1px 1px rgb(119, 101, 101);
     margin-bottom: 15px;
   }
-
   .swiper {
     width: 65%;
     height: 470px;
     border-radius: 35px;
     box-shadow: 5px 5px 5px #eeb2b2;
     margin-bottom: 65px;
-  }
-  
+  }  
   .swiper-slide {
     position: relative;
     height: auto;
@@ -76,8 +71,7 @@
     padding-top: 66.67%;
     background: #fff;
     overflow: hidden;
-  }
-  
+  }  
   .swiper-slide img {
     position: absolute;
     width: 100%;
@@ -86,8 +80,6 @@
     left: 0;
     object-fit: cover;
   }
-  
-
   @media (max-width: 767px) {
     .swiper {
       width: 85%;

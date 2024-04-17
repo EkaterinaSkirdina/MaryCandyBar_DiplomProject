@@ -7,8 +7,7 @@
 </template>
 
 <script>
-    export default {
-        
+    export default {        
     }
 </script>
 
@@ -20,12 +19,10 @@
     flex-direction: column;
     gap: 15px;
     margin-top: 7%;
-    text-align: center;
-    
+    text-align: center;    
     & p {
         width: 80%;
     }
-
     & img {
         height: 170px;
     }

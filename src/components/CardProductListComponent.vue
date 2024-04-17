@@ -6,26 +6,23 @@
 
 <script>
 import CardProductComponent from '@/components/CardProductComponent.vue';
-
-import { mapState, mapMutations, mapGetters, mapActions} from 'vuex';
+import { mapGetters, mapActions} from 'vuex';
 
     export default {
         components: {
           CardProductComponent
       },
-
       computed: {
         ...mapGetters(['PRODUCTS']),
       },
       methods: {
-        ...mapActions(['GET_PRODUCTS_FROM_API', 'ADD_TO_CART']),
+        ...mapActions(['GET_PRODUCTS_FROM_API']),
 
         filteredList() {
             const currentPage = String(this.$route.name);
             const currentList = this.PRODUCTS.filter(el => el.category === currentPage);
             return currentList;           
         },
-
       },
       mounted() {
         this.GET_PRODUCTS_FROM_API();
@@ -42,7 +39,6 @@ import { mapState, mapMutations, mapGetters, mapActions} from 'vuex';
     justify-content: space-evenly;
     gap: 15px;
 }
-
 @media (max-width: 767px) {
   .product-list {
   padding-bottom: 200px;

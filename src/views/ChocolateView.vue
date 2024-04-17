@@ -1,4 +1,5 @@
 <template>
+
   <BannerComponent heading='Шоколад' :class="'chokolate-banner-bgImg'" :isBreadCrumbs='true'/>
 
   <CardProductListComponent />
@@ -12,28 +13,15 @@ import BannerComponent from '@/components/BannerComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
 import CardProductListComponent from '@/components/CardProductListComponent.vue';
 
-import { mapState, mapMutations, mapGetters, mapActions} from 'vuex';
 
     export default {
         name: 'ChokolateView',
-
-      data() {
-        return {
-          
-        }
-      },
 
       components: {
           FooterComponent,
           BannerComponent,
           CardProductListComponent,
       },
-
-      computed: {
-        ...mapState(['productsList']),
-        ...mapGetters(['GET_PRODUCTS_LIST']),
-      },
-      
     }
 </script>
 

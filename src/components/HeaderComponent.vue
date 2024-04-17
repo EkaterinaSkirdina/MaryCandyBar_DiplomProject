@@ -1,6 +1,6 @@
 <template>
     <header class="container">
-        <div class='header-row'>            
+        <nav class='header-row'>            
             <router-link to="/about" class="text">О нас</router-link>
             <router-link to="/delivery" class="text">Доставка и оплата</router-link>
             <router-link to="/">
@@ -28,9 +28,10 @@
                 </div>
             </details>
             <router-link to="/cart" class="text">Корзина({{ TOTAL_IN_CART }})</router-link>
-        </div>
-        <div class="mobile-header-row">
-            
+        </nav>
+
+
+        <div class="mobile-header-row">            
             <details class="mobile-menu details">
                 <summary class="mobile-menu__summary">
                     <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,8 +65,7 @@
                 </svg>
                 <div class="cart-link__total">{{ TOTAL_IN_CART }}</div>
             </router-link>
-        </div>
-       
+        </div>       
     </header>
 </template>
 
@@ -74,37 +74,27 @@
 import { mapGetters } from 'vuex';
 
 export default {
-    name: 'Header',
-    data() {
-        return {
-            
-        }
-    },
+    name: 'HeaderComponent',    
     computed: {
         ...mapGetters(['TOTAL_IN_CART'])
     },
     methods: {
         removeAtrOpen() {
             document.querySelectorAll('.details').forEach(el => el.removeAttribute('open'));
-            // document.querySelector('details').removeAttribute('open');
         }
     }
-
 }
 </script>
 
 
 <style scoped lang="scss">
 @import '@/assets/style.scss';
-
     .header-row {   
         @include flexAlignment(space-evenly);        
     }
-
     .logo-img {
         height: 100px;
     }
-
     .catalog-menu {
         position: relative;
         cursor: pointer;
@@ -141,11 +131,9 @@ export default {
     .mobile-header-row {
         display: none;
     }
-
     .mobile-menu {
         position: relative;
-        z-index: 10;         
-    
+        z-index: 10;    
         &__content {
             background-color: #fff;
             padding: 0 16px 16px;
@@ -156,25 +144,21 @@ export default {
             width: 140px;
             border-radius: 18px;
         }
-
         & summary {
             list-style: none;
         }
-
         &__heading {
             padding: 8px 11px 11px 11px;
             border-bottom: 1px solid #EBEBEB;
             border-left: 5px solid $brandColor;
             margin-top: 16px;
         }
-
         &__link__box {
             display: flex;
             flex-direction: column;
             gap: 11px;
             padding: 15px 15px 0;
         }
-
         &__link {
             transition: all 0.3s;
             &:hover {

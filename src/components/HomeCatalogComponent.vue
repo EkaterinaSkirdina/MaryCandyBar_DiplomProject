@@ -12,8 +12,7 @@
 
 <script>
     export default {
-        name: 'HomeCatalogComponent'
-        
+        name: 'HomeCatalogComponent'        
     }
 </script>
 
@@ -27,8 +26,7 @@
         width: 30%;
         text-align: center;
         padding: 60px 20px;
-        background-size: cover;
-        
+        background-size: cover;        
     }
 }
 .choco {

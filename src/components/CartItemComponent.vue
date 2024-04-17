@@ -20,28 +20,20 @@
         </div>
     </div>
 </template>
-
 <script>
-import { mapGetters, mapActions, mapMutations } from 'vuex';
-
+import { mapActions } from 'vuex';
     export default {
         props: {
             cart_item: Object,
-        },
-
-
-        
+        },        
         methods: {
             ...mapActions(['DECREASE_QUANTITY', 'INCREASE_QUANTITY']),
-
             decrease(id) {
                 this.DECREASE_QUANTITY(id);
             },
-
             increase(id) {
                 this.INCREASE_QUANTITY(id);
             },
-
             deleteFromCart(item) {
                 this.$emit('deleteFromCart', item)
             }

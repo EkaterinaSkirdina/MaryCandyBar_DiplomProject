@@ -34,7 +34,6 @@
 
 <style scoped lang="scss">
 @import '@/assets/style.scss';
-
 .advantages {
     margin-bottom: 50px;
     .title {
@@ -48,15 +47,11 @@
         &__item {
         text-align: center;
         }
-    }
-    
+    }    
 }
-
 @media (max-width: 767px) {
     .advantages-block {
     grid-template-columns: 1fr 1fr;
     }
 }
-
-
 </style>

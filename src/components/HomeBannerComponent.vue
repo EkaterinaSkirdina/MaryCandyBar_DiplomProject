@@ -10,14 +10,8 @@
 </template>
 
 <script>
-import SwiperAutoComponent from './SwiperAutoComponent.vue';
-
     export default {
         name: 'HomeBannerComponent',
-        components: {
-            SwiperAutoComponent
-        }
-        
     }
 </script>
 

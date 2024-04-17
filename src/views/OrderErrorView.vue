@@ -5,14 +5,12 @@
         <p class="text">Повторите попытку, а лучше позвоните нам, и мы примем ваш заказ по телефону.</p>
         <p class="small-text">e-mail: MaryCB@mail.ru</p>
         <p class="small-text">+7 (495) 000-00-00</p>
-        <p class="small-text">Ежедневно с 8:00 до 20:00</p>
-        
+        <p class="small-text">Ежедневно с 8:00 до 20:00</p>        
     </section>
 </template>
 
 <script>
-    export default {
-        
+    export default {        
     }
 </script>
 
@@ -24,12 +22,10 @@
     flex-direction: column;
     gap: 15px;
     margin-top: 7%;
-    text-align: center;
-    
+    text-align: center;    
     & p {
         width: 80%;
     }
-
     & img {
         height: 170px;
     }

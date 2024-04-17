@@ -16,7 +16,6 @@
     export default {
         props: {
           heading: String,
-          srcImg: String,
           isBreadCrumbs: Boolean,
         },
     }
@@ -24,18 +23,13 @@
 
 <style lang="scss">
 @import '@/assets/vars.scss';
-
-
-
 .blog__banner {
     height: 250px;
     background-size: cover;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    
+    align-items: flex-end;    
 }
-
 .breadcrumb {
     background-color: #fff;
     padding: 41px 78px;
@@ -49,7 +43,6 @@
         padding-left: 5px;
     }   
 }
-
 .breadcrumb__way a {
     transition: all 0.2s ease;
     &:hover {
@@ -59,7 +52,6 @@
 .current-way {
   font-weight: 500;
 }
-
 @media (max-width: 767px) {
   .breadcrumb {
     padding: 20px 30px;

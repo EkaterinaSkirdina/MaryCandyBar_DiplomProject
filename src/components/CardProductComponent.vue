@@ -1,13 +1,11 @@
 <template>
     <div class="card">
-
         <ModalWindowComponent 
             v-if="isModalVisible"
             modalBtn="Назад"
             :modalHeading="product.title"
             @closeModal="closeModal"
             @modalBtnAction="closeModal"
-
         >
             <img class="modal-img" :src= " require('@/assets/images/productsImg/' + product.image) " alt="product photo">
             <div class="modal-content">                
@@ -15,10 +13,8 @@
                 <p class="small-text">{{ product.info }}</p>
                 <p class="small-text">Состав: {{ product.ingredients }}</p>
                 <p class="price title">{{ product.price }} руб</p>
-
             </div>
-        </ModalWindowComponent>
-        
+        </ModalWindowComponent>        
         <div @click="showModal" class="card-modal">
             <img class="img" :src= " require('@/assets/images/productsImg/' + product.image) " alt="product photo">
             <div class="card-content">
@@ -42,14 +38,12 @@
                 В корзине
             </div>
         </div>
-
     </div>
 </template>
 
 <script>
-import { mapState, mapMutations, mapGetters, mapActions} from 'vuex';
+import { mapGetters, mapActions} from 'vuex';
 import ModalWindowComponent from '@/components/ModalWindowComponent.vue';
-
     export default {
         props: {
             product: Object
@@ -83,7 +77,6 @@ import ModalWindowComponent from '@/components/ModalWindowComponent.vue';
                 this.isModalVisible = false;
             }
          }
-
     }
 </script>
 

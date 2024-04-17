@@ -36,12 +36,7 @@ const routes = [
     path: '/cart',
     name: 'cart',    
     component: () => import('../views/CartView.vue')
-  },
-  {
-    path: "/:catchAll(.*)",
-    name: '404',
-    component: () => import('../views/NotFoundView.vue'),
-  },
+  },  
   {
     path: "/order-ok",
     name: 'order-ok',
@@ -52,6 +47,11 @@ const routes = [
     name: 'order-error',
     component: () => import('../views/OrderErrorView.vue'),
   },
+  {
+    path: "/:catchAll(.*)",
+    name: '404',
+    component: () => import('../views/NotFoundView.vue'),
+  }
   
 ]
 

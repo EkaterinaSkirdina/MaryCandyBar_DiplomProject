@@ -1,6 +1,7 @@
 <template>
 
     <section class="cart container">
+
         <div class="cart__empty" v-if="!CART.length">
             <img src="@/assets/images/componentsImg/empty_cart.png" alt="empty cart">
             <p class="title">Здесь пока ничего нет</p>
@@ -23,77 +24,75 @@
                     <button @click="showModal" class="btn small-text">Оформить заказ</button>  
                 </div>
 
-        <ModalWindowComponent 
-            v-if="isModalVisible"
-            modalBtn="Назад"
-            modalHeading="Оформление заказа"
-            @closeModal="closeModal"
-            @modalBtnAction="closeModal"
-        >
-            <div class="modal-content">
-                <div class="info-total">
-                    <div>
-                        <span class="text">Товаров в корзине:
-                            <span class="text">{{ TOTAL_IN_CART }} шт</span>
-                        </span>
-                    </div>
-                    <div>
-                        <span class="total-price text">Итого к оплате: 
-                        <span class="brand-heading">{{ TOTAL_PRICE }} руб</span>
-                        <span class="small-text">*Без учета стоимости доставки</span>
-                    </span>
-                    </div>
-                </div>                
-                <form class="form" @submit.prevent="submit" @reset="onReset">
-                    <div class="form__block">
-                        <label class="text">ФИО</label>
-                        <input class="small-text"
-                            type="text" 
-                            required 
-                            autofocus
-                            placeholder="Введите ваши ФИО"  
-                            v-model.lazy="name" />
-                    </div>
+                <ModalWindowComponent 
+                    v-if="isModalVisible"
+                    modalBtn="Назад"
+                    modalHeading="Оформление заказа"
+                    @closeModal="closeModal"
+                    @modalBtnAction="closeModal"
+                >
+                    <div class="modal-content">
+                        <div class="info-total">
+                            <div>
+                                <span class="text">Товаров в корзине:
+                                    <span class="text">{{ TOTAL_IN_CART }} шт</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="total-price text">Итого к оплате: 
+                                    <span class="brand-heading">{{ TOTAL_PRICE }} руб</span>
+                                    <span class="small-text">*Без учета стоимости доставки</span>
+                                </span>
+                            </div>
+                        </div>                
+                        <form class="form" @submit.prevent="submit" @reset="onReset">
+                            <div class="form__block">
+                            <label class="text">ФИО</label>
+                            <input class="small-text"
+                                type="text" 
+                                required 
+                                autofocus
+                                placeholder="Введите ваши ФИО"  
+                                v-model.lazy="name" />
+                                </div>
 
-                    <div class="form__block">
-                        <label class="text">email</label>
-                        <input class="small-text"
-                            type="email"
-                            pattern="^(?!.*@.*@.*$)(?!.*@.*--.*\..*$)(?!.*@.*-\..*$)(?!.*@.*-$)((.*)?@.+(\..{1,11})?)$" 
-                            placeholder="Введите email" 
-                            v-model.lazy="email" />
+                            <div class="form__block">
+                                <label class="text">email</label>
+                                <input class="small-text"
+                                    type="email"
+                                    pattern="^(?!.*@.*@.*$)(?!.*@.*--.*\..*$)(?!.*@.*-\..*$)(?!.*@.*-$)((.*)?@.+(\..{1,11})?)$" 
+                                    placeholder="Введите email" 
+                                    v-model.lazy="email" />
+                            </div>
+
+                            <div class="form__block">
+                                <label class="text">Телефон</label>
+                                <input class="small-text" 
+                                    type="tel" 
+                                    required 
+                                    pattern="^\+7[1-9]{10}$"
+                                    placeholder="Введите номер телефона в формате +7.........." 
+                                    v-model.lazy="tel" />
+                            </div>
+
+                            <div class="form__block">
+                                <label class="text">Сообщение</label>
+                                <textarea  class="small-text"
+                                    cols="50"
+                                    rows="6"
+                                    placeholder="Введите желаемый способ получения заказа, дату и время. Если вы выбрали доставку - укажите точный адрес. Также здесь можно написать свои пожелания по заказу." 
+                                    v-model.lazy="message">
+                                </textarea>
+                            </div>
+
+                            <button class="form__btn small-text" type="reset">Очистить форму</button>
+                            <button class="form__btn small-text" type="submit">Заказать</button>
+                        </form>
                     </div>
-
-                    <div class="form__block">
-                        <label class="text">Телефон</label>
-                        <input class="small-text" 
-                            type="tel" 
-                            required 
-                            pattern="^\+7[1-9]{10}$"
-                            placeholder="Введите номер телефона в формате +7.........." 
-                            v-model.lazy="tel" />
-                    </div>
-
-                    <div class="form__block">
-                        <label class="text">Сообщение</label>
-                        <textarea  class="small-text"
-                            cols="50"
-                            rows="6"
-                            placeholder="Введите желаемый способ получения заказа, дату и время. Если вы выбрали доставку - укажите точный адрес. Также здесь можно написать свои пожелания по заказу." 
-                            v-model.lazy="message">
-                        </textarea>
-                    </div>
-
-                    <button class="form__btn small-text" type="reset">Очистить форму</button>
-                    <button class="form__btn small-text" type="submit">Заказать</button>
-                </form>
-
+                </ModalWindowComponent>
             </div>
-        </ModalWindowComponent>
-        </div>
         </div>
     </section>
-
     <FooterComponent />
 </template>
 
@@ -110,7 +109,6 @@ import { mapGetters, mapActions } from 'vuex';
             FooterComponent,
             ModalWindowComponent
         },
-
         data() {
             return {
                 isModalVisible: false,
@@ -120,11 +118,9 @@ import { mapGetters, mapActions } from 'vuex';
                 message: ''
             }
         },
-
         computed: {
             ...mapGetters (['CART', 'TOTAL_IN_CART', 'TOTAL_PRICE']), 
         },
-
         methods: {
             ...mapActions(['DELETE_FROM_CART', 'POST_ORDERS_API', 'CLEAR_CART']),
 
@@ -134,14 +130,12 @@ import { mapGetters, mapActions } from 'vuex';
             clearCart() {
                 this.CLEAR_CART();
             },
-
             showModal() {
                 this.isModalVisible = true;
             },
             closeModal() {
                 this.isModalVisible = false;
             },
-
             onReset() {
                 this.name = "";
                 this.email = "";
@@ -151,14 +145,14 @@ import { mapGetters, mapActions } from 'vuex';
             async submit() {
                 try {
                     const newOrder = {
-                    id: Date.now(),
-                    name: this.name,
-                    email: this.email,
-                    tel: this.tel,
-                    message: this.message,
-                    price: this.TOTAL_PRICE,
-                    cart: this.CART
-                    };
+                        id: Date.now(),
+                        name: this.name,
+                        email: this.email,
+                        tel: this.tel,
+                        message: this.message,
+                        totalPrice: this.TOTAL_PRICE,
+                        cart: this.CART
+                        };
                     await this.POST_ORDERS_API(newOrder);
                     this.onReset();
                     this.closeModal();
@@ -168,18 +162,13 @@ import { mapGetters, mapActions } from 'vuex';
                     console.log(error);
                     this.$router.push('/order-error');
                 }
-                
-
             }
-        },
-        
-        
+        }        
     }
 </script>
 
 <style scoped lang="scss">
 @import '@/assets/style.scss';
-
 .cart {
     padding-bottom: 200px;
     &__block {
@@ -222,8 +211,6 @@ import { mapGetters, mapActions } from 'vuex';
         }
     }
 }
-
-
     // Модальное окно
 .modal-content {
     padding: 0 15px;
@@ -281,7 +268,6 @@ import { mapGetters, mapActions } from 'vuex';
     .brand-heading {
         text-align: center;
     }
-
     // Модальное окно
     .modal-content {
         padding: 0;
@@ -296,8 +282,6 @@ import { mapGetters, mapActions } from 'vuex';
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    
+    }    
 }
 </style>
